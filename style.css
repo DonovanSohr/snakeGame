@@ -2,15 +2,27 @@
   box-sizing: border-box;
 }
 
-.grid {
-  display: flex;
-  height: 600px;
-  width: 800px;
-  background-color: black;
+#gameCanvas {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: black 2px;
+  background-color: white; */
 }
 
-.snake {
-  height: 20px;
-  width: 20px;
+/* #score {
+  text-align: center;
+  font-size: 140px;
+  font-family: Helvetica;
+} */
+
+/* #snake {
+  border: black 1px;
   background-color: lightgreen;
 }
+
+#food {
+  border: black 1px;
+  background-color: red;
+} */

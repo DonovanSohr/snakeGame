@@ -1,56 +1,71 @@
-let score = 0;
-let vV = 0; //vertical velocity
-let hV = 10; //horizontal velocity
-let foodHoriz;
-let foodVert;
+let gameSpeed = 40;
+let canvasBorderColour = 'lightgreen';
+let canvasBackgroundColour = "black";
+let snakeColour = 'lightgreen';
+let snakeBorderColour = 'black';
+let foodColour = 'red';
+let foodBorderColour = 'black';
+
+let score = 1;
 let changeDirec = false;
+let foodX;
+let foodY;
+let dx = 0;
+let dy = 0;
 
 let snake = [
-  {x: 100, y: 100},
+  {x: 100, y: 130},
 ];
 
-function snakeOnwards () {
-  let head = {x: snake[0].x + hV, y: snake[0].y + vV};
-    snake.unshift(head);
+const gameCanvas = document.getElementById("gameCanvas");
 
-  // let checkForEat = snake[0].x === foodHoriz && snake[0].y === foodVert;
-  // if (checkForEat) {
-  //   score += 5;
-  //
-  //   generateFood();
-  // }
-  // else {
-  //   snake.pop();
-  // }
+const ctx = gameCanvas.getContext("2d");
+
+main();
+
+createFood();
+
+document.addEventListener("keydown", changeDirection);
+
+
+
+function clearCanvas() {
+  ctx.fillStyle = canvasBackgroundColour;
+  ctx.strokestyle = canvasBorderColour;
+  ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+  ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
 }
 
-function changeThatDirec (event) {
-    let left = 37;
-    let right = 39;
-    let up = 38;
-    let down = 40;
+function drawFood() {
+  ctx.fillStyle = foodColour;
+  ctx.strokestyle = foodBorderColour;
+  ctx.fillRect(foodX, foodY, 20, 20);
+  ctx.strokeRect(foodX, foodY, 20, 20);
+}
 
-     if (changeDirec) return;
-     changeDirec = true;
-     const keyPressed = event.keyCode;
-     const goingUp = dy === -10;
-     const goingDown = dy === 10;
-     const goingRight = dx === 10;
-     const goingLeft = dx === -10;
-     if (keyPressed === left && !goingRight) {
-       dx = -10;
-       dy = 0;
-     }
-     if (keyPressed === up && !goingDown) {
-       dx = 0;
-       dy = -10;
-     }
-     if (keyPressed === right && !goingLeft) {
-       dx = 10;
-       dy = 0;
-     }
-     if (keyPressed === down && !goingUp) {
-       dx = 0;
-       dy = 10;
-     }
-   }
+function advanceSnake() {
+  const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+  snake.unshift(head);
+
+  const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
+  if (didEatFood) {
+    score += 5;
+    document.getElementById('score').innerHTML = score;
+    createFood();
+  }
+  else {
+    snake.pop();
+  }
+}
+
+
+function drawSnake() {
+  snake.forEach(drawSnakePart)
+}
+
+function drawSnakePart(snakePart) {
+  ctx.fillStyle = snakeColour;
+  ctx.strokestyle = snakeBorderColour;
+  ctx.fillRect(snakePart.x, snakePart.y, 20, 20);
+  ctx.strokeRect(snakePart.x, snakePart.y, 20, 20);
+}
