@@ -43,7 +43,7 @@ h1 {
   font-size: 30px;
   border-radius: 10px;
   font-family: 'Share Tech Mono', monospace;
-  animation: slideOut 3s forwards;
+  /* animation: slideOut 5s forwards; */
 }
 
 .score {
@@ -59,14 +59,14 @@ h1 {
   }
 }
 
-@keyframes slideOut {
+/* @keyframes slideOut {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(400%);
   }
-}
+} */
 /* #snake {
   border: black 1px;
   background-color: lightgreen;

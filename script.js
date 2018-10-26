@@ -7,10 +7,14 @@ let newScore = document.querySelector('.score');
 
 function runGame () {
 
-  function beginGame () {
-  let startScreen = querySelector('.startScreen');
-  startScreen.style.animation = 'slideOut'
-   }
+// let button = document.getElementByTagName('button')
+// button.onclick = function() {
+// // button.addEventListener('click', ev => {
+// //   if (ev.button === true) {
+//     let startScreen = querySelector('.startScreen');
+//     startScreen.style.animation = 'slideOut'
+//   requestAnimationFrame()
+// }
 
 let snake = {
   x: 160,
@@ -91,8 +95,11 @@ function loop() {
         // vV = 0;
         // food.x = makeItRandom(0, 62.50) * grid;
         // food.y = makeItRandom(0, 43.75) * grid;
-        newScore.innerText = `Final Score: ${score}`
-        //ADD PLAYAGAIN
+        // newScore.innerText = `Final Score: ${score}`
+        // newScore.innerText = `Final Score: ${score}`
+        // let button = document.getElementByTagName('button')
+        // button.addEventListener('click', ev => {
+        // if (ev.button === true) {
         runGame();
       }
     }
