@@ -29,7 +29,7 @@ function makeItRandom(min, max) {
 function loop() {
   requestAnimationFrame(loop);
 
-  if (++count < 4) {
+  if (++count < 3) {
     return;
   }
   count = 0;
@@ -71,7 +71,7 @@ function loop() {
       food.x = makeItRandom(0, 62.5) * grid;
       food.y = makeItRandom(0, 43.75) * grid;
       score += 5
-        newScore.innerText = score;
+        newScore.innerText = `Next level in ${score}/200`;
     }
 
     for (let i = index + 1; i < snake.units.length; i += 1) {
@@ -80,10 +80,11 @@ function loop() {
         snake.y = 160;
         snake.units = [];
         snake.startUnits = 1;
-        snake.hV = grid;
-        snake.vV = 0;
+        hV = 0;
+        vV = 0;
         food.x = makeItRandom(0, 62.50) * grid;
         food.y = makeItRandom(0, 43.75) * grid;
+        newScore.innerText = `Final Score: ${score}`
       }
     }
   });
