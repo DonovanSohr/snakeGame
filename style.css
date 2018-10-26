@@ -1,21 +1,26 @@
-* {
-  box-sizing: border-box;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-#gameCanvas {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* border: black 2px;
-  background-color: white; */
+canvas {
+border: solid white 2px;
+display: flex;
+background-color: black;
 }
 
-/* #score {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score {
   text-align: center;
   font-size: 140px;
   font-family: Helvetica;
-} */
+  color: black;
+}
 
 /* #snake {
   border: black 1px;
