@@ -7,6 +7,11 @@ let newScore = document.querySelector('.score');
 
 function runGame () {
 
+  function beginGame () {
+  let startScreen = querySelector('.startScreen');
+  startScreen.style.animation = 'slideOut'
+   }
+
 let snake = {
   x: 160,
   y: 160,
@@ -70,8 +75,8 @@ function loop() {
 
     if (cell.x === food.x && cell.y === food.y) {
       snake.startUnits += 5;
-      food.x = makeItRandom(0, 62.5) * grid;
-      food.y = makeItRandom(0, 43.75) * grid;
+      food.x = makeItRandom(0, 80) * grid;
+      food.y = makeItRandom(0, 44) * grid;
       score += 5
         newScore.innerText = `Next level in: ${score}/200`;
     }
