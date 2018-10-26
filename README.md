@@ -1,4 +1,6 @@
-SNAKE MVP:
+#Snake Game
+
+## SNAKE MVP:
 
   - A single player uses arrow keys to direct a constantly moving snake around a grid
   - The snake gets bigger and the player gains points once he/she picks up randomly generated pieces (food) on the grid

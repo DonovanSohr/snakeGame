@@ -5,6 +5,8 @@ let count = 0;
 let score = 1;
 let newScore = document.querySelector('.score');
 
+function runGame () {
+
 let snake = {
   x: 160,
   y: 160,
@@ -71,29 +73,26 @@ function loop() {
       food.x = makeItRandom(0, 62.5) * grid;
       food.y = makeItRandom(0, 43.75) * grid;
       score += 5
-        newScore.innerText = `Next level in ${score}/200`;
+        newScore.innerText = `Next level in: ${score}/200`;
     }
 
     for (let i = index + 1; i < snake.units.length; i += 1) {
       if (cell.x === snake.units[i].x && cell.y === snake.units[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.units = [];
-        snake.startUnits = 1;
-        hV = 0;
-        vV = 0;
-        food.x = makeItRandom(0, 62.50) * grid;
-        food.y = makeItRandom(0, 43.75) * grid;
+        // snake.x = 160;
+        // snake.y = 160;
+        // snake.units = [];
+        // snake.startUnits = 1;
+        // hV = 0;
+        // vV = 0;
+        // food.x = makeItRandom(0, 62.50) * grid;
+        // food.y = makeItRandom(0, 43.75) * grid;
         newScore.innerText = `Final Score: ${score}`
+        //ADD PLAYAGAIN
+        runGame();
       }
     }
   });
 }
-
-// function didGameEnd () {
-//
-// }
-
 
 document.onkeydown = function (event) {
   keyCode = window.event.keyCode;
@@ -117,6 +116,8 @@ document.onkeydown = function (event) {
   }
 }
 requestAnimationFrame(loop);
+}
+runGame();
 
 // let gameSpeed = 60;
 // let canvasBorderColor = 'lightgreen';

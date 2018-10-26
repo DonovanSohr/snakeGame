@@ -1,11 +1,11 @@
 html, body {
-  margin: 0;
+  margin-top: -30px;
 }
 
 canvas {
-border: solid lightgreen 2px;
+border: solid lightgreen 3px;
 display: flex;
-margin-top: 150px;
+margin-top: 180px;
 background-color: black;
 }
 
@@ -20,15 +20,42 @@ header {
   display: flex;
   position: absolute;
   align-self: flex-start;
+  margin-top: 0px;
 }
 
 h1 {
   text-align: center;
   font-size: 90px;
-  font-family: Helvetica;
+  font-family: 'Share Tech Mono', monospace;
   color: white;
+  font-weight: lighter;
 }
 
+.startScreen {
+  padding: 0 4px 4px 4px;
+  margin-top: 400px;
+  margin-left: 30px;
+  align-content: center;
+  position: absolute;
+  text-align: center;
+  color: black;
+  background-color: rgba(100, 225, 100, .5);
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.score {
+  animation: smooth-animate 2s;
+}
+
+@keyframes smooth-animate {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 /* #snake {
   border: black 1px;
   background-color: lightgreen;
