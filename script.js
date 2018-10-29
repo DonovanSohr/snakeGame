@@ -1,8 +1,8 @@
 const canvas = document.getElementById('snakeGame');
 const context = canvas.getContext('2d');
-let grid = 16;
 let count = 0;
 let score = 1;
+let grid = 16;
 let newScore = document.querySelector('.score');
 
 function runGame () {
@@ -11,10 +11,10 @@ let snake = {
   x: 160,
   y: 160,
 
+  units: [],
+
   hV: 0,
   vV: 0,
-
-  units: [],
 
   startUnits: 1
 }
@@ -34,6 +34,7 @@ function loopTiloop() {
   if (++count < 3) {
     return;
   }
+
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
 
@@ -75,22 +76,21 @@ function loopTiloop() {
         newScore.innerText = `Faster in: ${score}/50`;
     }
 
-    if (score >= 50 && score < 101) {
-      count = 1;
-      newScore.innerText = `Faster in: ${score}/100`
-    }
-
-    if (score >= 101 && score < 151) {
-      count = 2;
-      newScore.innerText = `Faster in: ${score}/150`
-    }
-
     for (let i = index + 1; i < snake.units.length; i += 1) {
       if (cell.x === snake.units[i].x && cell.y === snake.units[i].y) {
         newScore.innerText = `Final Score: ${score}`
         runGame();
-      }
     }
+  }
+  if (score >= 50 && score < 101) {
+  count = 1;
+  newScore.innerText = `Faster in: ${score}/100`
+}
+
+ if (score >= 101 && score < 151) {
+  count = 2;
+  newScore.innerText = `Faster in: ${score}/150`
+}
   });
 }
 
