@@ -11,6 +11,7 @@ http://earthy-underwear.surge.sh/
 
 Specifications:
 
+  - Although we did not cover it in class, I used canvas to render images of the snake and food and to keep them moving at a constant speed. I used basic canvas introductions and tutorials in order to understand how to put canvas in my game. I have linked my primary sources below.
   - Render a 40x80 unit grid (start much smaller to begin, probably 10x10)
   - Begin with a snake as big as one unit on the grid
   - Randomly generate another unit (food) also, and always, as big as one unit on the grid
@@ -26,6 +27,7 @@ Specifications:
   - As levels continue, the number of bombs increase
 
   Game Components:
+
     - Begin with a screen explaining rules that fades away
     - When the player eats the first food, a countdown will begin
     - The countdown will increase each time food is eaten
@@ -47,3 +49,11 @@ Specifications:
     - Wrap snake so it can go through walls  
     - Increase game speed when snake gains x number of points
     - Need a reset function for when the player loses
+
+    Sources:
+
+    https://medium.freecodecamp.org/think-like-a-programmer-how-to-build-snake-using-only-javascript-html-and-css-7b1479c3339e - used this site to decide how to implement canvas in relation to the game
+
+    https://www.w3schools.com/html/html5_canvas.asp - used this to understand the basics of canvas and the rules for implementing it
+
+    https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations - used this site to add the 'request animation frame' and keep the snake moving at a constant speed
